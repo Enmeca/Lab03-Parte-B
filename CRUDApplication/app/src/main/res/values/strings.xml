@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CRUD Application</string>
+
+    <string name="menu_jobapp">Job Application</string>
+    <string name="menu_listjob">List Job Application</string>
+    <string name="menu_logout">Logout</string>
 </resources>
