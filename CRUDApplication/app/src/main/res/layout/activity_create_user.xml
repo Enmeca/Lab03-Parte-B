@@ -18,13 +18,26 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="30dp"
-            android:text="Iniciar sesión"
+            android:padding="20dp"
+            android:text="Registrarse"
             android:textColor="#000000"
             android:textSize="25dp" />
 
         <EditText
-            android:id="@+id/et_user_name"
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:hint="Nombre"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textColorHighlight="#FF0000"
+            android:textColorHint="#000000"
+            android:textColorLink="#FF0000" />
+
+
+        <EditText
+            android:id="@+id/et_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -54,31 +67,13 @@
             android:padding="25dp">
 
             <Button
-                android:id="@+id/btn_submit"
+                android:id="@+id/btn_create"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Entrar"
+                android:text="Registrarse"
                 android:textAllCaps="false"
                 app:backgroundTint="#3F51B5" />
         </LinearLayout>
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/textViewLinkRegister"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:gravity="center"
-            android:text="Crear usuario"
-            android:textSize="16sp"
-            android:textColor="#000000" />
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/textViewLinkChangePass"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:gravity="center"
-            android:text="Cambiar contraseña"
-            android:textSize="16sp"
-            android:textColor="#000000" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

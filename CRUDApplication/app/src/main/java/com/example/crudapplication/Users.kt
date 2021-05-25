@@ -58,10 +58,10 @@ class Users private constructor() {
         users!!.removeAt(position)
     }
 
-    fun editUser(u: User, position: Int){
-        var aux = users!!.get(position)
-        aux.password = u.password
-        aux.name = u.name
-        aux.user = u.user
+    fun changePass(username: String, password: String){
+        val aux = users!!.find { it.user == username }
+        aux!!.password = password
     }
+
+
 }
