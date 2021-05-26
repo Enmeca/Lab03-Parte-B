@@ -6,7 +6,7 @@ class Users private constructor() {
 
     init{
         addUser(User("philippe09", "12345", "Philippe",0))
-        addUser(User("enrique12", "123", "Enrique",1))
+        addUser(User("emc", "123", "Enrique",1))
     }
 
     private object HOLDER {

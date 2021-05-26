@@ -46,6 +46,7 @@ class Login : AppCompatActivity() {
 //            i.putExtra("passw", password.toString())
                 // start your next activity
                 startActivity(i)
+                finish()
                 // your code to validate the user_name and password combination
                 // and verify the same
             }else{

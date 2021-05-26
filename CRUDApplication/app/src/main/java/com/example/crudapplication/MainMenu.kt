@@ -1,17 +1,23 @@
 package com.example.crudapplication
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
-import androidx.navigation.findNavController
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
+import com.google.android.material.snackbar.Snackbar
+
 
 class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -30,22 +36,27 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
 
+        navView.setupWithNavController(navController)
+        navView.setNavigationItemSelectedListener(this)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-
         when (item.itemId){
-/*            R.id.nav_jobapp -> {
-                val i = Intent(this, CrudPersonas::class.java)
-                startActivity(i)
+           R.id.nav_jobapp -> {
+               Toast.makeText(this, "teste", Toast.LENGTH_SHORT).show()
+//                val i = Intent(this, CrudPersonas::class.java)
+//                startActivity(i)
             }
             R.id.nav_list -> {
-                val i = Intent(this, CrudPersonas::class.java)
-                startActivity(i)
-            }*/
+                Toast.makeText(this, "teste", Toast.LENGTH_SHORT).show()
+//                val i = Intent(this, CrudPersonas::class.java)
+//                startActivity(i)
+            }
             R.id.nav_logout -> {
+                Toast.makeText(this, "Log out", Toast.LENGTH_SHORT).show()
                 val i = Intent(this, Login::class.java)
                 startActivity(i)
+                finish()
             }
         }
         return true
