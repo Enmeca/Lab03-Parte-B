@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -21,6 +22,18 @@ class Login : AppCompatActivity() {
         var et_password = findViewById(R.id.et_password) as EditText
         var btn_submit = findViewById(R.id.btn_submit) as Button
 
+        val create_click = findViewById(R.id.textViewLinkRegister) as TextView
+        create_click.setOnClickListener{
+            val intent = Intent(this, CreateUser::class.java)
+                intent.putExtra("MESSAGE", "msg")
+                startActivity(intent)
+        }
+        val change_click = findViewById(R.id.textViewLinkChangePass) as TextView
+        change_click.setOnClickListener{
+            val intent = Intent(this, ChangePass::class.java)
+            intent.putExtra("MESSAGE", "msg")
+            startActivity(intent)
+        }
         btn_submit.setOnClickListener {
             val user_name = et_user_name.text;
             val password = et_password.text;
