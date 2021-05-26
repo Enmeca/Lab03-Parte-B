@@ -12,7 +12,7 @@
         <activity
             android:name=".MainMenu"
             android:label="Main Page"
-            android:theme="@style/Theme.CRUDApplication.NoActionBa"/>
+            android:theme="@style/Theme.CRUDApplication.NoActionBar"/>
 
         <activity android:name=".Login">
             <intent-filter>
