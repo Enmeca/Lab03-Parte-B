@@ -16,16 +16,15 @@ import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator
 import java.util.*
 import kotlin.collections.ArrayList
 
-class CRUDJobs : AppCompatActivity() {
+class CrudJobs : AppCompatActivity() {
 
-    var jobs: JobApplications = JobApplications.instance
+   var jobs: JobApplications = JobApplications.instance
 
-    lateinit var lista: RecyclerView
+    lateinit var lista:RecyclerView
     lateinit var adaptador:RecyclerView_Adapter
     lateinit var aplication:JobApplication
     var archived = ArrayList<JobApplication>()
     var position: Int = 0
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,64 +61,64 @@ class CRUDJobs : AppCompatActivity() {
         getListOfApplications()
 
         val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP or ItemTouchHelper.DOWN or ItemTouchHelper.START or ItemTouchHelper.END, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
-            override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
-                val fromPosition: Int = viewHolder.adapterPosition
-                val toPosition: Int = target.adapterPosition
+                    override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
+                        val fromPosition: Int = viewHolder.adapterPosition
+                        val toPosition: Int = target.adapterPosition
 
-                Collections.swap(jobs.getApplications(), fromPosition, toPosition)
+                        Collections.swap(jobs.getApplications(), fromPosition, toPosition)
 
-                lista.adapter?.notifyItemMoved(fromPosition, toPosition)
+                        lista.adapter?.notifyItemMoved(fromPosition, toPosition)
 
-                return false
-            }
+                        return false
+                    }
 
-            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                    override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
-                position = viewHolder.adapterPosition
-                var quien: String = ""
+                        position = viewHolder.adapterPosition
+                        var quien: String = ""
 
-                if(direction == ItemTouchHelper.LEFT){
-                    aplication = JobApplication(jobs.getApplications()[position].firstName, jobs.getApplications()[position].lastName, jobs.getApplications()[position].streetAddress1, jobs.getApplications()[position].streetAddress2, jobs.getApplications()[position].city, jobs.getApplications()[position].state, jobs.getApplications()[position].postal, jobs.getApplications()[position].country, jobs.getApplications()[position].email, jobs.getApplications()[position].areaCode, jobs.getApplications()[position].phone, jobs.getApplications()[position].position, jobs.getApplications()[position].date)
-                    jobs.deleteJob(position)
-                    lista.adapter?.notifyItemRemoved(position)
+                        if(direction == ItemTouchHelper.LEFT){
+                            aplication = JobApplication(jobs.getApplications()[position].firstName, jobs.getApplications()[position].lastName, jobs.getApplications()[position].streetAddress1, jobs.getApplications()[position].streetAddress2, jobs.getApplications()[position].city, jobs.getApplications()[position].state, jobs.getApplications()[position].postal, jobs.getApplications()[position].country, jobs.getApplications()[position].email, jobs.getApplications()[position].areaCode, jobs.getApplications()[position].phone, jobs.getApplications()[position].position, jobs.getApplications()[position].date)
+                            jobs.deleteJob(position)
+                            lista.adapter?.notifyItemRemoved(position)
 
-                    Snackbar.make(lista, aplication.firstName + "Se eliminaría...", Snackbar.LENGTH_LONG).setAction("Undo") {
-                        jobs.getApplications().add(position, aplication)
-                        lista.adapter?.notifyItemInserted(position)
-                    }.show()
-                    adaptador = RecyclerView_Adapter(jobs.getApplications())
-                    lista.adapter = adaptador
-                }else{
-                    aplication = JobApplication(jobs.getApplications()[position].firstName, jobs.getApplications()[position].lastName, jobs.getApplications()[position].streetAddress1, jobs.getApplications()[position].streetAddress2, jobs.getApplications()[position].city, jobs.getApplications()[position].state, jobs.getApplications()[position].postal, jobs.getApplications()[position].country, jobs.getApplications()[position].email, jobs.getApplications()[position].areaCode, jobs.getApplications()[position].phone, jobs.getApplications()[position].position, jobs.getApplications()[position].date)
-                    archived.add(aplication)
+                            Snackbar.make(lista, aplication.firstName + "Se eliminaría...", Snackbar.LENGTH_LONG).setAction("Undo") {
+                                jobs.getApplications().add(position, aplication)
+                                lista.adapter?.notifyItemInserted(position)
+                            }.show()
+                            adaptador = RecyclerView_Adapter(jobs.getApplications())
+                            lista.adapter = adaptador
+                        }else{
+                            aplication = JobApplication(jobs.getApplications()[position].firstName, jobs.getApplications()[position].lastName, jobs.getApplications()[position].streetAddress1, jobs.getApplications()[position].streetAddress2, jobs.getApplications()[position].city, jobs.getApplications()[position].state, jobs.getApplications()[position].postal, jobs.getApplications()[position].country, jobs.getApplications()[position].email, jobs.getApplications()[position].areaCode, jobs.getApplications()[position].phone, jobs.getApplications()[position].position, jobs.getApplications()[position].date)
+                            archived.add(aplication)
 
-                    jobs.deleteJob(position)
-                    lista.adapter?.notifyItemRemoved(position)
+                            jobs.deleteJob(position)
+                            lista.adapter?.notifyItemRemoved(position)
 
-                    Snackbar.make(lista, aplication.firstName + "Se editaría...", Snackbar.LENGTH_LONG).setAction("Undo") {
-                        archived.removeAt(archived.lastIndexOf(aplication))
-                        jobs.getApplications().add(position, aplication)
-                        lista.adapter?.notifyItemInserted(position)
-                    }.show()
-                    adaptador = RecyclerView_Adapter(jobs.getApplications())
-                    lista.adapter = adaptador
-                    //getListOfPersons()
+                            Snackbar.make(lista, aplication.firstName + "Se editaría...", Snackbar.LENGTH_LONG).setAction("Undo") {
+                                archived.removeAt(archived.lastIndexOf(aplication))
+                                jobs.getApplications().add(position, aplication)
+                                lista.adapter?.notifyItemInserted(position)
+                            }.show()
+                            adaptador = RecyclerView_Adapter(jobs.getApplications())
+                            lista.adapter = adaptador
+                            //getListOfPersons()
+                        }
+                    }
+
+                    override fun onChildDraw(c: Canvas, recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, dX: Float, dY: Float, actionState: Int, isCurrentlyActive: Boolean) {
+
+                        RecyclerViewSwipeDecorator.Builder(this@CrudJobs, c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                            .addSwipeLeftBackgroundColor(ContextCompat.getColor(this@CrudJobs, R.color.red))
+                            .addSwipeLeftActionIcon(R.drawable.ic_baseline_delete_24)
+                            .addSwipeRightBackgroundColor(ContextCompat.getColor(this@CrudJobs, R.color.green))
+                            .addSwipeRightActionIcon(R.drawable.ic_baseline_edit_24)
+                            .create()
+                            .decorate()
+                        super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                    }
+
                 }
-            }
-
-            override fun onChildDraw(c: Canvas, recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, dX: Float, dY: Float, actionState: Int, isCurrentlyActive: Boolean) {
-
-                RecyclerViewSwipeDecorator.Builder(this@CRUDJobs, c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
-                    .addSwipeLeftBackgroundColor(ContextCompat.getColor(this@CRUDJobs, R.color.red))
-                    .addSwipeLeftActionIcon(R.drawable.ic_baseline_delete_24)
-                    .addSwipeRightBackgroundColor(ContextCompat.getColor(this@CRUDJobs, R.color.green))
-                    .addSwipeRightActionIcon(R.drawable.ic_baseline_edit_24)
-                    .create()
-                    .decorate()
-                super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
-            }
-
-        }
 
 
 
@@ -128,8 +127,6 @@ class CRUDJobs : AppCompatActivity() {
 
 
     }
-
-
 
     private fun getListOfApplications() {
         val Njobs = ArrayList<JobApplication>()
