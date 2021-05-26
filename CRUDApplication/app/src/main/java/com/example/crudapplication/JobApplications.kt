@@ -1,9 +1,5 @@
 package com.example.crudapplication
 
-import android.os.Build
-import androidx.annotation.RequiresApi
-import androidx.core.util.Predicate
-
 class JobApplications {
 
     private var applications : ArrayList<JobApplication> = ArrayList<JobApplication>()
@@ -32,8 +28,6 @@ class JobApplications {
     fun getApplications(): ArrayList<JobApplication>{
         return this.applications!!
     }
-    fun deleteJob(position: Int){
-        applications!!.removeAt(position)
-    }
+
 
 }
