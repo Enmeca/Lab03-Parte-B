@@ -11,7 +11,8 @@
         android:theme="@style/Theme.CRUDApplication">
         <activity android:name=".ChangePass"></activity>
         <activity android:name=".CreateUser" />
-
+        <activity android:name=".CRUDJobs"/>
+        <activity android:name=".ApplicationActivity"/>
         <activity
             android:name=".MainMenu"
             android:label="Main Page"
