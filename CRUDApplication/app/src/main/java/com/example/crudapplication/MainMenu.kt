@@ -44,13 +44,13 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         when (item.itemId){
            R.id.nav_jobapp -> {
                Toast.makeText(this, "teste", Toast.LENGTH_SHORT).show()
-//                val i = Intent(this, CrudPersonas::class.java)
-//                startActivity(i)
+                val i = Intent(this, ApplicationActivity::class.java)
+                startActivity(i)
             }
             R.id.nav_list -> {
                 Toast.makeText(this, "teste", Toast.LENGTH_SHORT).show()
-//                val i = Intent(this, CrudPersonas::class.java)
-//                startActivity(i)
+                val i = Intent(this, CRUDJobs::class.java)
+                startActivity(i)
             }
             R.id.nav_logout -> {
                 Toast.makeText(this, "Log out", Toast.LENGTH_SHORT).show()

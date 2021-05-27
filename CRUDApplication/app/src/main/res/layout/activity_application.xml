@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarStyle="outsideOverlay"
+    tools:context=".ApplicationActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TableLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableRow>
+
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_span="1"
+                        android:background="@drawable/bag3"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:stretchColumns="1"
+                        android:orientation="vertical">
+                        <TableRow>
+                            <TextView
+                                android:layout_span="3"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="28dp"
+                                android:text="Job Application"
+                                android:layout_marginLeft="10dp"
+                                android:textSize="27sp"
+                                android:textColor="#0C0C0C"
+                                android:textStyle="bold"
+                                tools:ignore="RtlCompat" />
+                        </TableRow>
+                        <TableRow>
+                            <TextView
+                                android:layout_span="3"
+                                android:layout_height="wrap_content"
+                                android:layout_width="280dp"
+                                android:layout_marginLeft="10dp"
+                                android:orientation="vertical"
+                                android:stretchColumns="1"
+                                android:text="Please complete the form below to aply aposition with us."
+                                android:textAlignment="viewStart"
+                                android:textColor="#0C0C0C"
+                                android:gravity="center_horizontal"
+                                android:textSize="10sp"
+                                tools:ignore="RtlCompat" />
+                        </TableRow>
+                    </TableLayout>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_column="0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Full name"
+                        android:layout_marginLeft="0dp"
+                        android:textSize="15sp"
+                        android:textColor="#0C0C0C"
+                        tools:ignore="RtlCompat"
+                        android:layout_width="match_parent" />
+
+                    <LinearLayout android:orientation="horizontal"
+                        android:layout_weight="2"
+                        android:layout_column="1">
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/outlinedTextField"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="First Name">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/txtFirstName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="0dp"
+                                android:layout_column="1"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/outlinedTextField1"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:hint="Last Name">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/txtLastName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_column="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_column="0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="Current Address"
+                        android:layout_marginLeft="0dp"
+                        android:textSize="15sp"
+                        android:textColor="#0C0C0C"
+                        tools:ignore="RtlCompat"
+                        android:layout_width="match_parent" />
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="4"
+                        android:layout_column="1">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/outlinedTextField2"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_marginLeft="0dp"
+                            android:layout_height="wrap_content"
+
+                            android:hint="Street Address">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/txtStreetAddress1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_column="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/outlinedTextField3"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_marginLeft="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Street Address Line 2">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/txtStreetAddress2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_column="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/outlinedTextField4"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="0dp"
+                                android:layout_height="wrap_content"
+                                android:hint="City">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/txtCity"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="1" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/outlinedTextField5"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="0dp"
+                                android:layout_height="wrap_content"
+                                android:hint="State/Province">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/txtState"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_column="1" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/outlinedTextField6"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="0dp"
+                                android:layout_height="wrap_content"
+                                android:hint="Postal/Zip Code">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/txtPostal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="1" />
+
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/outlinedTextField7"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="0dp"
+                                android:layout_height="wrap_content"
+
+                                android:hint="Country">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/spinnerCountryID"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:editable="false"/>
+
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_column="0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="Email Address"
+                        android:layout_marginLeft="0dp"
+                        android:textSize="15sp"
+                        android:textColor="#0C0C0C"
+                        tools:ignore="RtlCompat"
+                        android:layout_width="match_parent" />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_weight="4"
+                        android:layout_column="1">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/outlinedTextField8"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_marginLeft="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="ex:name@gmail.com">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/txtEmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_column="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow>
+
+
+                    <TextView
+                        android:layout_column="0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="Phone number"
+                        android:layout_marginLeft="0dp"
+                        android:textSize="15sp"
+                        android:textColor="#0C0C0C"
+                        tools:ignore="RtlCompat"
+                        android:layout_width="match_parent" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_weight="2"
+                        android:layout_column="1">
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/outlinedTextField9"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Area Code">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/txtArea"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_column="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/outlinedTextField10"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Phone number">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/txtPhone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_column="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0">
+
+                        <TextView
+                            android:layout_column="0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:text="Applying for"
+                            android:layout_marginLeft="0dp"
+                            android:textSize="15sp"
+                            android:textColor="#0C0C0C"
+                            tools:ignore="RtlCompat"
+                            android:layout_width="match_parent" />
+                        <TextView
+                            android:layout_column="0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="position"
+                            android:layout_marginLeft="0dp"
+                            android:textSize="15sp"
+                            android:textColor="#0C0C0C"
+                            tools:ignore="RtlCompat"
+                            android:layout_width="match_parent" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_weight="4"
+                        android:layout_column="1">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/outlinedTextField11"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="match_parent"
+                            android:layout_marginLeft="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Position">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/spinnerPositionID"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:editable="false"/>
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_column="0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="Start date"
+                        android:layout_marginLeft="0dp"
+                        android:textSize="15sp"
+                        android:textColor="#0C0C0C"
+                        tools:ignore="RtlCompat"
+                        android:layout_width="match_parent" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_weight="4"
+                        android:layout_column="1">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_weight="4"
+                            android:layout_column="1"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/outlinedTextField12"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_marginLeft="0dp"
+                                android:layout_height="wrap_content"
+                                android:hint="Pick a date">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/dataPicker"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:focusable="false"
+                                    android:layout_column="1" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </TableRow>
+
+
+                <TableRow>
+                    <TextView
+                        android:layout_column="0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:text="Upload Resume"
+                        android:layout_marginLeft="0dp"
+                        android:textSize="15sp"
+                        android:textColor="#0C0C0C"
+                        tools:ignore="RtlCompat"
+                        android:layout_width="match_parent" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_weight="4"
+                        android:layout_column="1">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="217dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="40dp"
+                            android:background="@drawable/button_rounded_border"
+                            android:onClick="send"
+                            android:text="Enviar"
+                            android:textColor="#FFFFFF"
+                            />
+                    </LinearLayout>
+                </TableRow>
+
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
