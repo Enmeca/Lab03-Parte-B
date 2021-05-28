@@ -23,6 +23,9 @@ class EditAplication: AppCompatActivity() {
 
         var dato: JobApplication? = null
         private var pos:Int = -1
+        private lateinit var spinnerCountry: AutoCompleteTextView
+        private lateinit var spinnerPosition: AutoCompleteTextView
+
         private var etFirstname: EditText? = null
         private var etLastname: EditText? = null
         private var etstreetAddress1: EditText? = null
@@ -40,12 +43,22 @@ class EditAplication: AppCompatActivity() {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_view_application)
             dato = intent.getSerializableExtra("dato") as JobApplication?
-            etCountry = findViewById<View>(R.id.txtCountryView) as EditText
-            etCountry!!.setText(dato!!.country)
+
+//            etCountry = findViewById<View>(R.id.txtCountryView) as EditText
+//            etCountry!!.setText(dato!!.country)
+
+
+            spinnerPosition = findViewById(R.id.spinnerPositionID)
+            spinnerPosition!!.setText(dato!!.position)
+
+
+            spinnerCountry = findViewById<AutoCompleteTextView>(R.id.spinnerCountryID)
+            spinnerCountry!!.setText(dato!!.country)
+
+
             etDate = findViewById<View>(R.id.txtDateView) as EditText
             etDate!!.setText(dato!!.date)
-            etPosition = findViewById<View>(R.id.txtAplyView) as EditText
-            etPosition!!.setText(dato!!.position)
+
             etFirstname = findViewById<View>(R.id.txtFirstNameView) as EditText
             etFirstname!!.setText(dato!!.firstName)
             etLastname = findViewById<View>(R.id.txtLastNameView) as EditText
@@ -84,10 +97,10 @@ class EditAplication: AppCompatActivity() {
             )
             val positions = arrayOf("System Ingeneer", "Secretary", "Administrador", "Security")
 
-/*            var adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, countries)
+           var adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, countries)
             spinnerCountry.setAdapter(adapter)
             adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, positions)
-            spinnerPosition.setAdapter(adapter)*/
+            spinnerPosition.setAdapter(adapter)
         }
 /*FIXME
     -poner las varas en spinner
@@ -122,6 +135,7 @@ class EditAplication: AppCompatActivity() {
             position,
             date
         )
+        //TODO PROBAR QUE SI EDITE
         jobs.editJob(pos,job)
         Toast.makeText(this, "Enviado Exitosamente", Toast.LENGTH_SHORT).show()
     }

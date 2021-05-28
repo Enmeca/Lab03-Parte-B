@@ -265,7 +265,7 @@
 
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/outlinedTextField7"
-                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="0dp"
@@ -273,13 +273,13 @@
                                 android:hint="Country"
                                 android:textColorHint="#000000">
 
-                                <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/txtCountryView"
+                                <AutoCompleteTextView
+                                    android:id="@+id/spinnerCountryID"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_column="1"
-                                    android:layout_marginLeft="0dp"
-                                    android:editable="false" />
+                                    android:layout_marginLeft="10dp"
+                                    android:editable="false"
+                                    android:textColor="#000000" />
 
 
                             </com.google.android.material.textfield.TextInputLayout>
@@ -422,18 +422,19 @@
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/outlinedTextField11"
-                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="0dp"
                             android:hint="Position"
                             android:textColorHint="#000000">
 
-                            <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/txtAplyView"
+                            <AutoCompleteTextView
+                                android:id="@+id/spinnerPositionID"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:editable="false" />
+                                android:editable="false"
+                                android:textColor="#000000" />
 
 
                         </com.google.android.material.textfield.TextInputLayout>

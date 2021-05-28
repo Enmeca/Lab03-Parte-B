@@ -39,6 +39,7 @@ class ApplicationActivity : AppCompatActivity() {
         setContentView(R.layout.activity_application)
         spinnerCountry = findViewById<AutoCompleteTextView>(R.id.spinnerCountryID)
         spinnerPosition = findViewById(R.id.spinnerPositionID)
+
         etFirstname = findViewById<View>(R.id.txtFirstName) as EditText
         etLastname = findViewById<View>(R.id.txtLastName) as EditText
         etstreetAddress1 = findViewById<View>(R.id.txtStreetAddress1) as EditText
