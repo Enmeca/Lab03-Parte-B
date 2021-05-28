@@ -42,6 +42,7 @@ class RecyclerView_Adapter(private var items: ArrayList<JobApplication>): Recycl
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = itemsList?.get(position)
         holder.itemView.findViewById<TextView>(R.id.tvNombre)?.text = item?.firstName +" "+item?.lastName
+        holder.itemView.findViewById<TextView>(R.id.tvPuesto)?.text = item?.position
         //holder.itemView.findViewById<ImageView>(R.id.ivFoto).setImageResource(item?.foto!!)
 
         holder.itemView.setOnClickListener {
@@ -63,6 +64,18 @@ class RecyclerView_Adapter(private var items: ArrayList<JobApplication>): Recycl
                     val resultList = ArrayList<JobApplication>()
                     for (row in items) {
                         if (row.firstName.toLowerCase().contains(charSearch.toLowerCase())) {
+                            resultList.add(row)
+                        }
+                        if (row.lastName.toLowerCase().contains(charSearch.toLowerCase())) {
+                            resultList.add(row)
+                        }
+                        if (row.position.toLowerCase().contains(charSearch.toLowerCase())) {
+                            resultList.add(row)
+                        }
+                        if (row.city.toLowerCase().contains(charSearch.toLowerCase())) {
+                            resultList.add(row)
+                        }
+                        if (row.phone.toLowerCase().contains(charSearch.toLowerCase())) {
                             resultList.add(row)
                         }
                     }

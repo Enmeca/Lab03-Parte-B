@@ -12,6 +12,9 @@ class JobApplications {
         addApplication(JobApplication("Philippe", "Gairaud", "Addres1","Addres2",
                                        "Moravia", "San Jose", "001", "Costa Rica", "philippegq@gmail.com",
                                         "506", "89430876", "Intern", "09/12/2021" ))
+        addApplication(JobApplication("Huberth", "Gonzales", "Addres1","Addres2",
+            "Guadalupe", "San Jose", "002", "Costa Rica", "huberth@gmail.com",
+            "506", "88888888", "Intern", "15/09/2021" ))
     }
 
     private object HOLDER {
