@@ -45,12 +45,12 @@ class RecyclerView_Adapter(private var items: ArrayList<JobApplication>): Recycl
         holder.itemView.findViewById<TextView>(R.id.tvPuesto)?.text = item?.position
         //holder.itemView.findViewById<ImageView>(R.id.ivFoto).setImageResource(item?.foto!!)
 
-        holder.itemView.setOnClickListener {
+        /*holder.itemView.setOnClickListener {
             val intent = Intent(this.mcontext, EditAplication::class.java)
             intent.putExtra("dato", item)
             intent.putExtra("position",position)
             this.mcontext.startActivity(intent)
-        }
+        }*/
     }
 
 

@@ -44,4 +44,7 @@ class JobApplications {
         applications!![position] = job
 
     }
+    fun getJob(position: Int) : JobApplication{
+        return this.applications!![position]
+    }
 }

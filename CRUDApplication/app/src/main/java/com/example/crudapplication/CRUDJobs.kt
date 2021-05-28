@@ -1,5 +1,6 @@
 package com.example.crudapplication
 
+import android.content.Intent
 import android.graphics.Canvas
 import android.graphics.Color
 import android.os.Bundle
@@ -75,31 +76,24 @@ class CRUDJobs : AppCompatActivity() {
                 position = viewHolder.adapterPosition
                 var quien: String = ""
 
+
                 if(direction == ItemTouchHelper.LEFT){
                     aplication = JobApplication(jobs.getApplications()[position].firstName, jobs.getApplications()[position].lastName, jobs.getApplications()[position].streetAddress1, jobs.getApplications()[position].streetAddress2, jobs.getApplications()[position].city, jobs.getApplications()[position].state, jobs.getApplications()[position].postal, jobs.getApplications()[position].country, jobs.getApplications()[position].email, jobs.getApplications()[position].areaCode, jobs.getApplications()[position].phone, jobs.getApplications()[position].position, jobs.getApplications()[position].date)
                     jobs.deleteJob(position)
                     lista.adapter?.notifyItemRemoved(position)
 
-                    Snackbar.make(lista, aplication.firstName + "Se eliminaría...", Snackbar.LENGTH_LONG).setAction("Undo") {
+                    Snackbar.make(lista, aplication.firstName + "Se eliminaría... ", Snackbar.LENGTH_LONG).setAction("Undo") {
                         jobs.getApplications().add(position, aplication)
                         lista.adapter?.notifyItemInserted(position)
                     }.show()
                     adaptador = RecyclerView_Adapter(jobs.getApplications())
                     lista.adapter = adaptador
                 }else{
-                    aplication = JobApplication(jobs.getApplications()[position].firstName, jobs.getApplications()[position].lastName, jobs.getApplications()[position].streetAddress1, jobs.getApplications()[position].streetAddress2, jobs.getApplications()[position].city, jobs.getApplications()[position].state, jobs.getApplications()[position].postal, jobs.getApplications()[position].country, jobs.getApplications()[position].email, jobs.getApplications()[position].areaCode, jobs.getApplications()[position].phone, jobs.getApplications()[position].position, jobs.getApplications()[position].date)
-                    archived.add(aplication)
-
-                    jobs.deleteJob(position)
-                    lista.adapter?.notifyItemRemoved(position)
-
-                    Snackbar.make(lista, aplication.firstName + "Se editaría...", Snackbar.LENGTH_LONG).setAction("Undo") {
-                        archived.removeAt(archived.lastIndexOf(aplication))
-                        jobs.getApplications().add(position, aplication)
-                        lista.adapter?.notifyItemInserted(position)
-                    }.show()
-                    adaptador = RecyclerView_Adapter(jobs.getApplications())
-                    lista.adapter = adaptador
+                    val intent = Intent(this@CRUDJobs, EditAplication::class.java)
+                    val item = jobs.getJob(position)
+                    intent.putExtra("dato", item )
+                    intent.putExtra("position",position)
+                    startActivity(intent)
                     //getListOfPersons()
                 }
             }
