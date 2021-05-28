@@ -29,6 +29,7 @@ class JobApplications {
     }
 
 
+
     fun getApplications(): ArrayList<JobApplication>{
         return this.applications!!
     }
@@ -36,4 +37,8 @@ class JobApplications {
         applications!!.removeAt(position)
     }
 
+    fun editJob(position: Int, job: JobApplication){
+        applications!![position] = job
+
+    }
 }

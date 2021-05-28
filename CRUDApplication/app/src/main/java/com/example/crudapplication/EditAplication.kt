@@ -18,7 +18,11 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class EditAplication: AppCompatActivity() {
+
+    var jobs: JobApplications = JobApplications.instance
+
         var dato: JobApplication? = null
+        private var pos:Int = -1
         private var etFirstname: EditText? = null
         private var etLastname: EditText? = null
         private var etstreetAddress1: EditText? = null
@@ -62,5 +66,64 @@ class EditAplication: AppCompatActivity() {
             etEmail!!.setText(dato!!.email)
             etPhone = findViewById<View>(R.id.txtPhoneView) as EditText
             etPhone!!.setText(dato!!.phone)
+
+            pos= intent.getSerializableExtra("position") as Int
+
+
+
+            val countries = arrayOf(
+                "Canada",
+                "Costa Rica",
+                "El Salvador",
+                "Guatemala",
+                "Honduras",
+                "Mexico",
+                "Nicaragua",
+                "Panama",
+                "United States"
+            )
+            val positions = arrayOf("System Ingeneer", "Secretary", "Administrador", "Security")
+
+/*            var adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, countries)
+            spinnerCountry.setAdapter(adapter)
+            adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, positions)
+            spinnerPosition.setAdapter(adapter)*/
         }
+/*FIXME
+    -poner las varas en spinner
+        -agregarle el autocomplete
+*/
+    fun send(view: View?) {
+        val firstName = etFirstname!!.text.toString()
+        val lastName = etLastname!!.text.toString()
+        val streetAddress1 = etstreetAddress1!!.text.toString()
+        val streetAddress2 = etstreetAddress2!!.text.toString()
+        val city = etCity!!.text.toString()
+        val state = etState!!.text.toString()
+        val postal = etPostal!!.text.toString()
+        val country = spinnerCountry.toString()
+        val email = etEmail!!.text.toString()
+        val areaCode = etAreaCode!!.text.toString()
+        val phone = etPhone!!.text.toString()
+        val position = spinnerPosition.toString()
+        val date = etDate!!.text.toString()
+        val job = JobApplication(
+            firstName,
+            lastName,
+            streetAddress1,
+            streetAddress2,
+            city,
+            state,
+            postal,
+            country,
+            email,
+            areaCode,
+            phone,
+            position,
+            date
+        )
+        jobs.editJob(pos,job)
+        Toast.makeText(this, "Enviado Exitosamente", Toast.LENGTH_SHORT).show()
+    }
+
     }

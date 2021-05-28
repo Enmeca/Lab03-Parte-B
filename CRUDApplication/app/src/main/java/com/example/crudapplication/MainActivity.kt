@@ -13,3 +13,4 @@ class MainActivity : AppCompatActivity() {
 
 
 //TODO hacer el editar en el CRUD
+//TODO Agregar el nav en las demas pantallas?
