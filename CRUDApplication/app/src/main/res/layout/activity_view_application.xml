@@ -274,7 +274,7 @@
                                 android:textColorHint="#000000">
 
                                 <AutoCompleteTextView
-                                    android:id="@+id/spinnerCountryID"
+                                    android:id="@+id/CountryID"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="10dp"
@@ -430,7 +430,7 @@
                             android:textColorHint="#000000">
 
                             <AutoCompleteTextView
-                                android:id="@+id/spinnerPositionID"
+                                android:id="@+id/Position"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:editable="false"

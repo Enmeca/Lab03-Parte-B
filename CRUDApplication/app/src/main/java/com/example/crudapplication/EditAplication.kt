@@ -48,11 +48,11 @@ class EditAplication: AppCompatActivity() {
 //            etCountry!!.setText(dato!!.country)
 
 
-            spinnerPosition = findViewById(R.id.spinnerPositionID)
+            spinnerPosition = findViewById<AutoCompleteTextView>(R.id.Position)
             spinnerPosition!!.setText(dato!!.position)
 
 
-            spinnerCountry = findViewById<AutoCompleteTextView>(R.id.spinnerCountryID)
+            spinnerCountry = findViewById<AutoCompleteTextView>(R.id.CountryID)
             spinnerCountry!!.setText(dato!!.country)
 
 

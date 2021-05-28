@@ -38,7 +38,7 @@ class ApplicationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_application)
         spinnerCountry = findViewById<AutoCompleteTextView>(R.id.spinnerCountryID)
-        spinnerPosition = findViewById(R.id.spinnerPositionID)
+        spinnerPosition = findViewById<AutoCompleteTextView>(R.id.spinnerPositionID)
 
         etFirstname = findViewById<View>(R.id.txtFirstName) as EditText
         etLastname = findViewById<View>(R.id.txtLastName) as EditText
@@ -88,8 +88,10 @@ class ApplicationActivity : AppCompatActivity() {
     fun send(view: View?) {
         val firstName = etFirstname!!.text.toString()
         val lastName = etLastname!!.text.toString()
+
         val streetAddress1 = etstreetAddress1!!.text.toString()
         val streetAddress2 = etstreetAddress2!!.text.toString()
+
         val city = etCity!!.text.toString()
         val state = etState!!.text.toString()
         val postal = etPostal!!.text.toString()
