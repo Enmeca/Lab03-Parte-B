@@ -20,6 +20,7 @@
         app:srcCompat="@drawable/job" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/tvNombre"
         android:layout_width="40dp"
         android:layout_height="wrap_content"

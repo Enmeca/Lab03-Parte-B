@@ -41,16 +41,13 @@ class RecyclerView_Adapter(private var items: ArrayList<JobApplication>): Recycl
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = itemsList?.get(position)
-        holder.itemView.findViewById<TextView>(R.id.tvNombre)?.text = item?.firstName
+        holder.itemView.findViewById<TextView>(R.id.tvNombre)?.text = item?.firstName +" "+item?.lastName
         //holder.itemView.findViewById<ImageView>(R.id.ivFoto).setImageResource(item?.foto!!)
 
-//poner lo del crudapp
-
         holder.itemView.setOnClickListener {
-            val intent = Intent(mcontext, MainActivity::class.java)
-            intent.putExtra("passselectedcountry", itemsList?.get(position))
-            mcontext.startActivity(intent)
-            Log.d("Selected:", itemsList?.get(position)?.firstName.toString())
+            val intent = Intent(this.mcontext, EditAplication::class.java)
+            intent.putExtra("dato", item)
+            this.mcontext.startActivity(intent)
         }
     }
 

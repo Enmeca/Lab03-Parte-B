@@ -19,6 +19,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class ApplicationActivity : AppCompatActivity() {
+    var jobs: JobApplications = JobApplications.instance
+
     private lateinit var spinnerCountry: AutoCompleteTextView
     private lateinit var spinnerPosition: AutoCompleteTextView
     private var etFirstname: EditText? = null
@@ -111,7 +113,8 @@ class ApplicationActivity : AppCompatActivity() {
             position,
             date
         )
-        Toast.makeText(this, "Application successful", Toast.LENGTH_SHORT).show()
+        jobs.addApplication(job)
+        Toast.makeText(this, "Enviado Exitosamente", Toast.LENGTH_SHORT).show()
     }
 
     // --------------------------DatePicker---------------------

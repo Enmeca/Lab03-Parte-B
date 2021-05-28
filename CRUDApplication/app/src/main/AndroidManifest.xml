@@ -13,6 +13,7 @@
         <activity android:name=".CreateUser" />
         <activity android:name=".CRUDJobs"/>
         <activity android:name=".ApplicationActivity"/>
+        <activity android:name=".EditAplication"/>
         <activity
             android:name=".MainMenu"
             android:label="Main Page"
