@@ -9,3 +9,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 }
+
+//TODO Navbar con permisos
+
+//TODO hacer el editar en el CRUD

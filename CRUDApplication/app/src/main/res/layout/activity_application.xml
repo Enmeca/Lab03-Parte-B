@@ -103,7 +103,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="0dp"
                             android:layout_weight="1"
-                            android:hint="First Name">
+                            android:hint="First Name"
+                            android:textColorHint="#000000">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/txtFirstName"
@@ -121,7 +122,8 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:hint="Last Name">
+                            android:hint="Last Name"
+                            android:textColorHint="#000000">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/txtLastName"
@@ -162,7 +164,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="0dp"
 
-                            android:hint="Street Address">
+                            android:hint="Street Address"
+                            android:textColorHint="#000000">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/txtStreetAddress1"
@@ -180,7 +183,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="0dp"
-                            android:hint="Street Address Line 2">
+                            android:hint="Street Address Line 2"
+                            android:textColorHint="#000000">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/txtStreetAddress2"
@@ -206,7 +210,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="0dp"
                                 android:layout_weight="1"
-                                android:hint="City">
+                                android:hint="City"
+                                android:textColorHint="#000000">
 
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:id="@+id/txtCity"
@@ -224,7 +229,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="0dp"
                                 android:layout_weight="1"
-                                android:hint="State/Province">
+                                android:hint="State/Province"
+                                android:textColorHint="#000000">
 
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:id="@+id/txtState"
@@ -252,7 +258,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="0dp"
                                 android:layout_weight="1"
-                                android:hint="Postal/Zip Code">
+                                android:hint="Postal/Zip Code"
+                                android:textColorHint="#000000">
 
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:id="@+id/txtPostal"
@@ -272,7 +279,8 @@
                                 android:layout_marginLeft="0dp"
                                 android:layout_weight="1"
 
-                                android:hint="Country">
+                                android:hint="Country"
+                                android:textColorHint="#000000">
 
                                 <AutoCompleteTextView
                                     android:id="@+id/spinnerCountryID"
@@ -313,7 +321,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="0dp"
-                            android:hint="ex:name@gmail.com">
+                            android:hint="ex:name@gmail.com"
+                            android:textColorHint="#000000">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/txtEmail"
@@ -354,7 +363,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="0dp"
                             android:layout_weight="1"
-                            android:hint="Area Code">
+                            android:hint="Area Code"
+                            android:textColorHint="#000000">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/txtArea"
@@ -372,7 +382,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="0dp"
                             android:layout_weight="1"
-                            android:hint="Phone number">
+                            android:hint="Phone number"
+                            android:textColorHint="#000000">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/txtPhone"
@@ -429,7 +440,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="0dp"
-                            android:hint="Position">
+                            android:hint="Position"
+                            android:textColorHint="#000000">
 
                             <AutoCompleteTextView
                                 android:id="@+id/spinnerPositionID"
@@ -475,7 +487,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="0dp"
-                                android:hint="Pick a date">
+                                android:hint="Pick a date"
+                                android:textColorHint="#000000">
 
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:id="@+id/dataPicker"
