@@ -8,6 +8,7 @@
     tools:context=".CRUDJobs">
 
     <LinearLayout
+        android:background="@color/main_bgc"
         android:id="@+id/jobs_content_id"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -32,15 +32,12 @@ class CRUDJobs : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crud_jobs)
 
-
         val searchIcon = findViewById<ImageView>(R.id.search_mag_icon)
         searchIcon.setColorFilter(Color.BLACK)
 
-
         val cancelIcon = findViewById<ImageView>(R.id.search_close_btn)
         cancelIcon.setColorFilter(Color.BLACK)
-
-
+        
         val textView = findViewById<TextView>(R.id.search_src_text)
         textView.setTextColor(Color.BLACK)
 

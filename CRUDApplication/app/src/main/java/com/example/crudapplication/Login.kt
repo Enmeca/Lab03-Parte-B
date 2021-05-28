@@ -38,8 +38,8 @@ class Login : AppCompatActivity() {
             val user_name = et_user_name.text;
             val password = et_password.text;
             //Toast.makeText(this@LoginExample, user_name, Toast.LENGTH_LONG).show()
-            if(users.login(user_name.toString(), password.toString())){
-                val login = users.loginP(user_name.toString(), password.toString())
+            if(users.login(user_name.toString().lowercase(), password.toString())){
+                val login = users.loginP(user_name.toString().lowercase(), password.toString())
                 val i = Intent(this, MainMenu::class.java)
                 i.putExtra("msg", "MENSAJE DE Login al Menú")
                 i.putExtra("Login", login)

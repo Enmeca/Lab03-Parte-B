@@ -44,6 +44,8 @@ class RecyclerView_Adapter(private var items: ArrayList<JobApplication>): Recycl
         holder.itemView.findViewById<TextView>(R.id.tvNombre)?.text = item?.firstName
         //holder.itemView.findViewById<ImageView>(R.id.ivFoto).setImageResource(item?.foto!!)
 
+//poner lo del crudapp
+
         holder.itemView.setOnClickListener {
             val intent = Intent(mcontext, MainActivity::class.java)
             intent.putExtra("passselectedcountry", itemsList?.get(position))

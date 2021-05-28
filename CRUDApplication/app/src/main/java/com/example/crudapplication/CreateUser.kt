@@ -24,7 +24,7 @@ class CreateUser : AppCompatActivity() {
             var name = et_name.text;
             val password = et_password.text
             val user = et_user.text
-            users.addUser(User(user.toString(), password.toString(), name.toString(),0))
+            users.addUser(User(user.toString().lowercase(), password.toString(), name.toString(),0))
             Toast.makeText(this, "El usuario se ha registrado", Toast.LENGTH_LONG).show()
             val intent = Intent(this, Login::class.java)
                 intent.putExtra("MESSAGE", "msg")

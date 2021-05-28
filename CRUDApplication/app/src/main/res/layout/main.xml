@@ -8,6 +8,7 @@
     tools:showIn="@layout/app">
 
     <fragment
+        android:background="@color/main_bgc"
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
