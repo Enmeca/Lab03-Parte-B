@@ -37,6 +37,9 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         val navController = findNavController(R.id.nav_host_fragment)
 
         navView.setupWithNavController(navController)
+        if(l.admin==0){
+            navView.menu.removeItem(R.id.nav_list)
+        }
         navView.setNavigationItemSelectedListener(this)
     }
 

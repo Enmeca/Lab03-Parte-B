@@ -5,7 +5,7 @@ class Users private constructor() {
     private var users : ArrayList<User> = ArrayList<User>()
 
     init{
-        addUser(User("philippe09", "12345", "Philippe",0))
+        addUser(User("fili", "123", "Philippe",0))
         addUser(User("emc", "123", "Enrique",1))
     }
 

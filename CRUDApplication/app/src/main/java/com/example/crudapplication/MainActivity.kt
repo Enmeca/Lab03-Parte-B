@@ -10,6 +10,6 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-//TODO Navbar con permisos
+
 
 //TODO hacer el editar en el CRUD
