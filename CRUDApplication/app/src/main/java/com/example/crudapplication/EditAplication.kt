@@ -114,11 +114,11 @@ class EditAplication: AppCompatActivity() {
         val city = etCity!!.text.toString()
         val state = etState!!.text.toString()
         val postal = etPostal!!.text.toString()
-        val country = spinnerCountry.toString()
+        val country = spinnerCountry!!.text.toString()
         val email = etEmail!!.text.toString()
         val areaCode = etAreaCode!!.text.toString()
         val phone = etPhone!!.text.toString()
-        val position = spinnerPosition.toString()
+        val position = spinnerPosition!!.text.toString()
         val date = etDate!!.text.toString()
         val job = JobApplication(
             firstName,
