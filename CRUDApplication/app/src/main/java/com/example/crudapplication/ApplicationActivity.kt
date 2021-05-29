@@ -15,10 +15,13 @@ import android.app.DatePickerDialog
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.navigation.NavigationView
 import java.text.SimpleDateFormat
 import java.util.*
 
-class ApplicationActivity : AppCompatActivity() {
+class ApplicationActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     var jobs: JobApplications = JobApplications.instance
 
     private lateinit var spinnerCountry: AutoCompleteTextView
@@ -63,11 +66,16 @@ class ApplicationActivity : AppCompatActivity() {
             "Panama",
             "United States"
         )
+        val navView: NavigationView = findViewById(R.id.nav_view)
+        //val navController = findNavController(R.id.nav_host_fragment)
         val positions = arrayOf("System Ingeneer", "Secretary", "Administrador", "Security")
         var adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, countries)
         spinnerCountry.setAdapter(adapter)
         adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, positions)
         spinnerPosition.setAdapter(adapter)
+        //navView.setupWithNavController(navController)
+        navView.menu.removeItem(R.id.nav_list)
+        navView.setNavigationItemSelectedListener(this)
     }
 
 //    override fun onCreateOptionsMenu(menus: Menu): Boolean {
@@ -138,4 +146,23 @@ class ApplicationActivity : AppCompatActivity() {
             calendar[Calendar.DAY_OF_MONTH]
         ).show()
     }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId){
+            R.id.nav_jobapp -> {
+                Toast.makeText(this, "teste", Toast.LENGTH_SHORT).show()
+                val i = Intent(this, ApplicationActivity::class.java)
+                startActivity(i)
+            }
+            R.id.nav_logout -> {
+                Toast.makeText(this, "Log out", Toast.LENGTH_SHORT).show()
+                val i = Intent(this, Login::class.java)
+                startActivity(i)
+                finish()
+            }
+        }
+        return true
+    }
+
+
 }

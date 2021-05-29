@@ -496,8 +496,9 @@
                             </com.google.android.material.textfield.TextInputLayout>
 
                         </LinearLayout>
+
                         <androidx.appcompat.widget.AppCompatButton
-                            android:layout_width="217dp"
+                            android:layout_width="186dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="40dp"
@@ -513,3 +514,4 @@
     </ScrollView>
 
 </RelativeLayout>
+
