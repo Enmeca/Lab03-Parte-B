@@ -4,20 +4,23 @@ import android.content.Intent
 import android.graphics.Canvas
 import android.graphics.Color
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator
 import java.util.*
 import kotlin.collections.ArrayList
 
-class CRUDJobs : AppCompatActivity() {
+class CRUDJobs : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     var jobs: JobApplications = JobApplications.instance
 
@@ -33,6 +36,8 @@ class CRUDJobs : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crud_jobs)
 
+        val navView: NavigationView = findViewById(R.id.nav_view)
+
         val searchIcon = findViewById<ImageView>(R.id.search_mag_icon)
         searchIcon.setColorFilter(Color.BLACK)
 
@@ -45,6 +50,9 @@ class CRUDJobs : AppCompatActivity() {
         lista = findViewById(R.id.lista)
         lista.layoutManager = LinearLayoutManager(lista.context)
         lista.setHasFixedSize(true)
+
+        navView.menu.removeItem(R.id.nav_jobapp)
+        navView.setNavigationItemSelectedListener(this)
 
         findViewById<SearchView>(R.id.jobs_search).setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -120,7 +128,22 @@ class CRUDJobs : AppCompatActivity() {
 
     }
 
-
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId){
+            R.id.nav_jobapp -> {
+                Toast.makeText(this, "teste", Toast.LENGTH_SHORT).show()
+                val i = Intent(this, ApplicationActivity::class.java)
+                startActivity(i)
+            }
+            R.id.nav_logout -> {
+                Toast.makeText(this, "Log out", Toast.LENGTH_SHORT).show()
+                val i = Intent(this, Login::class.java)
+                startActivity(i)
+                finish()
+            }
+        }
+        return true
+    }
 
     private fun getListOfApplications() {
         val Njobs = ArrayList<JobApplication>()

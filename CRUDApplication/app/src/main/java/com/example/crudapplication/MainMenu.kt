@@ -40,6 +40,9 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         if(l.admin==0){
             navView.menu.removeItem(R.id.nav_list)
         }
+        if(l.admin==1){
+            navView.menu.removeItem(R.id.nav_jobapp)
+        }
         navView.setNavigationItemSelectedListener(this)
     }
 
