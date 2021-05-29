@@ -58,6 +58,7 @@ class EditAplication: AppCompatActivity() {
 
             etDate = findViewById<View>(R.id.txtDateView) as EditText
             etDate!!.setText(dato!!.date)
+            etDate!!.setOnClickListener { showDateDialog(etDate) }
 
             etFirstname = findViewById<View>(R.id.txtFirstNameView) as EditText
             etFirstname!!.setText(dato!!.firstName)
@@ -140,4 +141,23 @@ class EditAplication: AppCompatActivity() {
         Toast.makeText(this, "Enviado Exitosamente", Toast.LENGTH_SHORT).show()
     }
 
+
+    // --------------------------DatePicker---------------------
+    private fun showDateDialog(date_in: EditText?) {
+        val calendar = Calendar.getInstance()
+        val dateSetListener = OnDateSetListener { view, year, month, dayOfMonth ->
+            calendar[Calendar.YEAR] = year
+            calendar[Calendar.MONTH] = month
+            calendar[Calendar.DAY_OF_MONTH] = dayOfMonth
+            val simpleDateFormat = SimpleDateFormat("dd/MM/yyyy")
+            date_in!!.setText(simpleDateFormat.format(calendar.time))
+        }
+        DatePickerDialog(
+            this@EditAplication,
+            dateSetListener,
+            calendar[Calendar.YEAR],
+            calendar[Calendar.MONTH],
+            calendar[Calendar.DAY_OF_MONTH]
+        ).show()
+    }
     }
