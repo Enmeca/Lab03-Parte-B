@@ -96,12 +96,14 @@ class CRUDJobs : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                     }.show()
                     adaptador = RecyclerView_Adapter(jobs.getApplications())
                     lista.adapter = adaptador
+                    adaptador.notifyDataSetChanged()
                 }else{
                     val intent = Intent(this@CRUDJobs, EditAplication::class.java)
                     val item = jobs.getJob(position)
                     intent.putExtra("dato", item )
                     intent.putExtra("position",position)
                     startActivity(intent)
+                    adaptador.notifyDataSetChanged()
                     //getListOfPersons()
                 }
             }
